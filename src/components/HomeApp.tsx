@@ -1,11 +1,14 @@
 'use client';
-import Banner from '@/layout/Banner';
+import dynamic from 'next/dynamic';
 import React from 'react';
+const DynamicHeader = dynamic(() => import('@/layout/Banner'), {
+  ssr: false,
+  // loading: () => <h1>loading...</h1>,
+});
 const HomeApp = ({ dataSlides }: { dataSlides: any }) => {
-  console.log(dataSlides);
   return (
     <>
-      <Banner data={dataSlides?.items || []} />
+      <DynamicHeader data={dataSlides?.items || []} />
       <div className='container relative z-20 '>
         <h1>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur illo provident magnam vero nihil ratione possimus quia labore

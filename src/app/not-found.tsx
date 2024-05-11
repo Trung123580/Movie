@@ -1,8 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 const notFound = () => {
   const router = useRouter();
-  router.back();
+  useEffect(() => {
+    router.back();
+  }, []);
   return <></>;
 };
 

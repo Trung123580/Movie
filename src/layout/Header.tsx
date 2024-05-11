@@ -8,23 +8,28 @@ const Header = () => {
   const handleToggleNavbar = () => {
     setIsShowNavBav(!isShowNavBar);
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (isShowNavBar) {
+        document.body.classList.add('no-scroll');
+      } else {
+        if (document.body.classList.contains('no-scroll')) document.body.classList.remove('no-scroll');
+      }
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, [isShowNavBar]);
   const handleResize = () => {
-    const isLargeScreen = window.innerWidth > 984;
-    if (isLargeScreen) {
-      if (isShowNavBar) handleToggleNavbar();
+    if (typeof window !== 'undefined') {
+      const isLargeScreen = window.innerWidth > 984;
+      if (isLargeScreen) {
+        if (isShowNavBar) handleToggleNavbar();
+      }
     }
   };
-  useEffect(() => {
-    if (isShowNavBar) {
-      document.body.classList.add('no-scroll');
-    } else {
-      if (document.body.classList.contains('no-scroll')) document.body.classList.remove('no-scroll');
-    }
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isShowNavBar]);
   return (
     <header className='container '>
       <div className='relative '>

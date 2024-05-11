@@ -1,5 +1,7 @@
+'use client';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from '@/utils/moduleSwiper';
+import Image from 'next/image';
 const Banner = ({ data }: { data: any }) => {
   console.log(data);
   return (
@@ -19,7 +21,8 @@ const Banner = ({ data }: { data: any }) => {
           modules={[Autoplay]}>
           {data.map((item: any) => (
             <SwiperSlide key={item?._id}>
-              <img className='h-full w-full object-cover' src={item?.thumb_url} alt='' />
+              {/* <img className='h-full w-full object-cover' src={item?.thumb_url} alt='' /> */}
+              <Image src={item?.thumb_url} className='h-full w-full object-cover h-screen' alt='' width={0} height={0} sizes='100vw' />
               <div className='absolute top-[40%] z-30 left-[10%] w-full bg-green'>
                 <div>{item?.name}</div>
                 <p>{item?.origin_name}</p>
