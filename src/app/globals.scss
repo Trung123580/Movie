@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Nunito Sans', sans-serif !important;
+  background-color: #000000f2;
+  color: white;
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+a {
+  color: white;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #52525b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(32, 196, 24);
+  border-radius: 3px;
+}
+.flex-basis {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+// layout modal
+// .calc-width {
+//   width: calc(100vw - 21rem);
+// }
+.alpha-blur {
+  &::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 80%);
+    // border-radius: 30% 70% 70% 30% / 21% 68% 32% 79%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: blur(4rem);
+    z-index: 19;
+  }
+  &::before {
+    z-index: 31;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 80%);
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(3rem);
+    border-radius: 30% 70% 20% 30% / 21% 30% 92% 79%;
+    z-index: 19;
+  }
+}
+.beta-blur {
+  height: 100%;
+  &::after {
+    content: '';
+    border-radius: 30% 70% 70% 30% / 21% 68% 32% 79%;
+    position: absolute;
+    width: calc(100% - 90%);
+    height: calc(100% - 20%);
+    top: 20%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: blur(3rem);
+    z-index: 19;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 40%);
+    height: calc(100% - 80%);
+    left: 20%;
+    border-radius: 30% 70% 70% 30% / 21% 68% 32% 79%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: blur(2rem);
+    z-index: 19;
+  }
+}
