@@ -12,7 +12,6 @@ const config: Config = {
     colors: {
       black: '#000000f2',
       white: '#fff',
-      green: 'rgb(32, 196, 24)',
       yellow: 'rgb(228, 216, 4)',
       overlay: 'rgb(17 16 16)',
       blur: 'rgba(0, 0, 0, 0.5)',

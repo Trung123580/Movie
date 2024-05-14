@@ -8,7 +8,6 @@ const Header = () => {
   const handleToggleNavbar = () => {
     setIsShowNavBav(!isShowNavBar);
   };
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (isShowNavBar) {

@@ -19,7 +19,7 @@ const Nav = ({ onToggleNavbar, isShowNavbar }: navTypes) => {
             className='md:py-0 md:px-0 border-b-2 border-b-black lg:border-b-transparent text-white md:text-black cursor-default hover:bg-black lg:hover:bg-transparent '>
             <Link
               onClick={onToggleNavbar}
-              className={`first-letter:uppercase uppercase px-4 lg:px-0 w-full inline-block py-3 hover:bg-green lg:hover:text-green lg:hover:bg-transparent transition ${
+              className={`first-letter:uppercase uppercase px-4 lg:px-0 w-full inline-block py-3 hover:bg-yellow lg:hover:text-yellow lg:hover:bg-transparent transition ${
                 pathName === path ? 'bg-yellow lg:text-yellow lg:bg-transparent' : ''
               }`}
               href={path}>
@@ -48,7 +48,7 @@ const Nav = ({ onToggleNavbar, isShowNavbar }: navTypes) => {
             xmlns='http://www.w3.org/2000/svg'
             aria-hidden='true'
             role='img'
-            className='iconify iconify--mdi text-yellow'
+            className='iconify iconify--mdi text-white hover:text-yellow transition'
             width='30'
             height='30'
             viewBox='0 0 24 24'>
